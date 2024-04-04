@@ -138,7 +138,7 @@ class Entry(models.Model):
     tags = models.ManyToManyField("Tag", related_name='entries')
 
     def __str__(self):
-        return f"Статья {self.tags.all().values_list('name')}"
+        return f"Статья {self.text}"
 
 class Tag(models.Model):
     name = models.CharField(max_length=50,
