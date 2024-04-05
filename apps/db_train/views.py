@@ -15,7 +15,7 @@ class TrainView(View):
 
         self.answer3 = Entry.objects.filter(Q(tags__name='Кино') | Q(tags__name='Музыка')).distinct() #  Какие статьи содержат тег 'Кино' или 'Музыка' ?
 
-        self.answer4 = Author.objects.aggregate(gender=Count('gender'))  # TODO Сколько авторов женского пола зарегистрировано в системе?
+        self.answer4 = Author.objects.filter(gender='ж')  # TODO Сколько авторов женского пола зарегистрировано в системе?
 
         self.answer5 = None  # TODO Какой процент авторов согласился с правилами при регистрации?
 
