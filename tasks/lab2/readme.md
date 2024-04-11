@@ -371,7 +371,7 @@ pip install django-debug-toolbar
 ```python
 INSTALLED_APPS = [
     # ...
-    "debug_toolbar",
+    "",
     # ...
 ]
 ```
@@ -381,7 +381,7 @@ INSTALLED_APPS = [
 ```python
 MIDDLEWARE = [
     # ...
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    ".middleware.DebugToolbarMiddleware",
 ]
 ```
 ![img_7.png](pic/img_7.png)
@@ -399,7 +399,7 @@ INTERNAL_IPS = [
 ```python
 # После urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += [
-    path("__debug__/", include("debug_toolbar.urls")),
+    path("__debug__/", include(".urls")),
 ]
 ```
 
@@ -429,7 +429,7 @@ import mimetypes
 
 mimetypes.add_type("application/javascript", ".js", True)
 
-DEBUG_TOOLBAR_CONFIG = {
+_CONFIG = {
     "INTERCEPT_REDIRECTS": False,
 }
 ```
